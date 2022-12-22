@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Credit Card Transactions Fraud Detection</title>
+    <style>
+        body{
+            background-repeat: no-repeat;
+            background-image: url('static\\bb\\h.jpg');
+            background-size: 224vh 117vh;
+            margin:0;
+            
+        }
+
+        
+        .d1{display: flex;width:100%;height:14.1vh;
+            justify-content: space-between;box-shadow: 2px 6px 5px rgb(0, 234, 255);
+            background-color: rgb(27, 23, 23);position: fixed;left:0px;top:0px;}
+        .df:first-child{margin-right: auto;}
+        .d2{height:80vh;width:100%;}
+        .f{position: relative;}
+        .inp{height:3.2vh;font-size: medium;
+            border: none;box-shadow:3.2px 4px 4px  rgb(0, 234, 255);}
+        .inp:focus{outline: none;}
+        .dd1{flex:1;padding: 20px 0;flex-basis:100%; }
+        .subz{border:none;font-size:16px;color:rgb(41, 40, 40);
+            padding:6px 22px;transition: 0.4s;border-radius: 15.5px;
+            box-shadow:4px 4px 7px rgb(191, 3, 191);text-shadow:0 3.5px 3.5px gray;}
+        .subz:hover{background-color: black;transition: 0.4s;color:grey;}
+        .subz:active{background-color: green;color:gray;}
+        .sub{border:none;font-size:16px;color:rgb(41, 40, 40);width:17px;outline: none;
+            transition: 0.7s;width:20vh;box-shadow: 5px 5px 5px yellow;border-radius: 10px;}
+        ::-webkit-file-upload-button{border-radius: 9px;border: none;transition: 0.7s;text-shadow: 0 4px 4px gray;}
+        ::-webkit-file-upload-button:hover{color:grey;background-color: black;transition: 0.7s;}
+        ::-webkit-file-upload-button:active{color:gray;background-color: yellowgreen;}
+        .sub:hover{background-color: gray;transition: 0.7s;outline: none;color:black}
+        .sub:active{background-color: black;color:white;box-shadow: 0px -2px rgb(0, 147, 0);}
+        .pz{animation-name: chh;animation-duration: 8s;animation-iteration-count: infinite;
+         animation-direction: normal;
+        }
+        @keyframes chh {0%{color:#286428;}25%{color:green;}50%{color: yellowgreen;}
+         75%{color:yellow} 100%{color:antiquewhite;}   
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script lang="text/javascript">
+        window.addEventListener("resize",(e)=>{
+           const ww=window.innerWidth;
+           if(ww>=970){
+               document.body.style.overflowX="hidden";
+           }
+           if(ww<970){
+               document.body.style.overflowX="visible";
+           }
+        });
+     </script>      
+</head>
+<body>
+    
+        <div class="d1">
+           <div class="df"> <h2 style="letter-spacing:1px;font-family:monospace;color:white;font-size:23px;position:relative;top:15px;margin-left:20px;text-shadow: 4px 3px 3px aqua;">
+            Test the transactions!
+            </h2></div>
+           <div class="df">
+            <form method="post" action="/files" enctype="multipart/form-data" style="display:flex;">
+                <div style="margin-top:16px;"><input class="sub" type="file"  id="file" name="file"></div>
+                <div style="margin-top:10px;margin-right:8px;margin-left:10px;">
+                    <button class="subz" type="submit">Submit
+                    </button>
+                </div>
+            </form>
+            <div style="margin-right:9px;">
+                <p class="pz">Upload csv files only instead of filling up input</p>
+            </div>
+           </div>
+           
+        </div>
+    <div class="d2">
+        <div style="position:relative;top:15vh;">
+        <form  method="post" action="/predict" style="width:100%;" >
+            <div style="width:100%;margin-left:2vh;">
+              <div style="display:flex;"><div class="dd1" ><input class="inp" type="number" step="any" name="v1" id="v1"  placeholder="V1" required></div>
+                    <div class="dd1"><input class="inp" type="number" step="any" name="v2" id="v2" placeholder="V2" required></div>
+                    <div class="dd1"><input class="inp" type="number" step="any" name="v3" id="v3" placeholder="V3" required></div>
+                    <div class="dd1"><input class="inp" type="number" step="any" name="v4" id="v4" placeholder="V4" required></div>
+                    <div class="dd1"><input class="inp" type="number" step="any" name="v5" id="v5" placeholder="V5" required></div></div>
+                    <div style="display:flex;"> <div class="dd1"><input class="inp" type="number" step="any" name="v6" id="v6" placeholder="V6" required></div>
+                    <div class="dd1"><input class="inp" type="number" step="any" name="v7" id="v7" placeholder="V7" required></div>
+                    <div class="dd1"><input class="inp" type="number" step="any" name="v8" id="v8" placeholder="V8" required></div>
+                    <div class="dd1"><input class="inp" type="number" step="any" name="v9" id="v9" placeholder="V9" required></div>
+                    <div class="dd1"><input class="inp" type="number" step="any" name="v10" id="v10" placeholder="V10" required></div></div>
+                    <div style="display:flex;"><div class="dd1"><input class="inp" type="number" step="any" name="v11" id="v11" placeholder="V11" required></div>
+                    <div class="dd1"><input class="inp" type="number" step="any" name="v12" id="v12" placeholder="V12" required></div>
+                    <div class="dd1"><input class="inp" type="number" step="any" name="v13" id="v13" placeholder="V13" required></div>
+                    <div class="dd1"><input class="inp" type="number" step="any" name="v14" id="v14" placeholder="V14" required></div>
+                    <div class="dd1"><input class="inp" type="number" step="any" name="v15" id="v15" placeholder="V15" required></div></div>
+                    <div style="display:flex;">      <div class="dd1"><input class="inp" type="number" step="any" name="v16" id="v16" placeholder="V16" required></div>
+                    <div class="dd1"><input class="inp" type="number" step="any" name="v17" id="v17" placeholder="V17" required></div>
+                    <div class="dd1"><input class="inp" type="number" step="any" name="v18" id="v18" placeholder="V18" required></div>
+                    <div class="dd1"><input class="inp" type="number" step="any" name="v19" id="v19" placeholder="V19" required></div>
+                    <div class="dd1"><input class="inp" type="number" step="any" name="v20" id="20" placeholder="V20" required></div></div>
+                    <div style="display:flex;">      <div class="dd1"><input class="inp" type="number" step="any" name="v21" id="v21" placeholder="V21" required></div>
+                    <div class="dd1"><input  class="inp" type="number" step="any" name="v22" id="v22" placeholder="V22" required></div>
+                    <div class="dd1"><input class="inp"  type="number" step="any" name="v23" id="v23" placeholder="V23" required></div>
+                    <div class="dd1"><input class="inp" type="number" step="any" name="v24" id="v24" placeholder="V24" required></div>
+                    <div class="dd1"><input class="inp" type="number" step="any" name="v25" id="v25" placeholder="V25" required></div></div>
+                    <div style="display:flex;"><div class="dd1"><input class="inp" type="number" step="any" name="v26" id="v26" placeholder="V26" required></div>
+                    <div class="dd1"><input class="inp" type="number" step="any" name="v27" id="v27" placeholder="V27" required></div>
+                    <div class="dd1"><input class="inp" type="number" step="any" name="v28" id="v28" placeholder="V28" required></div>
+                    <div class="dd1"><input class="inp" type="number" step="any" name="am" id="am" placeholder="Amount" required></div>
+                    <div class="dd1"><input class="subz" type="submit" value="Predict"></div> 
+                    </div>
+            </div>
+        </form></div>
+        </div>
+  
+</body>
+</html>

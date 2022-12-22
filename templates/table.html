@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predicted Values</title>
+    <style>
+        body{background-color: black;margin:0px 0px;z-index:1;}
+        .na{height:10.5vh;width:100%;
+            background-color: black;
+            position: fixed;
+            top:0px;
+            left:0px;
+            display: flex;
+            z-index:5;
+            }
+            .dd{margin-right:auto;margin-left:10px;}
+            .b1{
+                border:0.140em purple solid;
+                padding:12px 7px;
+                color:black;
+                background:linear-gradient(45deg,navy,purple);
+                box-shadow: 5px 4px 4px purple;
+                transition: 0.9s;
+                letter-spacing: 0.8px;
+                margin-top: 9px;
+                margin-right: 10px;
+            }
+            .b1:hover{
+                border:0.130em navy solid;
+                transition: 0.9s;
+                color:white;
+                
+                background: linear-gradient(50deg, navy,blue);
+                box-shadow:  5px 4px 4px navy;
+            }
+            .b1:active{background: linear-gradient(360deg,white,white);color:black;}
+            .para{font-family: monospace;
+             font-size: 24px;
+             animation-name:ch;animation-duration: 5s;
+             animation-iteration-count: infinite;
+             animation-direction:normal;
+             letter-spacing: 1.5px;
+            font-weight: 600;
+            }
+            @keyframes ch {
+                0%{color:whitesmoke;}
+                25%{color:violet;}
+                50%{color:purple;}
+                75%{color:navy;}
+                100%{color:blue;}
+            }
+        </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script>
+            
+$(document).ready(function(){
+    $(window).scroll(function(){
+        var scroll = $(window).scrollTop();
+        if (scroll > 100) {
+        $(".na").css("transition" , "0.3s");
+          $(".na").css("background" , "whitesmoke");
+        }
+  
+        else{
+            $(".na").css("transition" , "0.3s");
+            $(".na").css("background" , "black");  	
+        }
+    })
+  })
+
+        </script>
+</head>
+<body>
+    <div class="na">
+        <div class="dd">
+            <p class="para">Predicted Results
+            </p>
+        </div>
+        <div>
+            <form action='/' style="display:inline;">
+                <button class="b1">Main Page</button>
+            </form>
+        </div>
+        <div>
+            <form action='/dw' style="display:inline;">
+                <button  class="b1">Download table as csv </button>
+            </form>
+        </div>
+    </div>
+        <div style="position:absolute;top:9%;left:0%;color:whitesmoke;width:100%;">
+        
+        <table>
+         
+            <h1>
+    
+                 {% for table in tables %}
+                <h2>{{titles[loop.index]}}</h2>                            
+                {{ table|safe }}
+                {% endfor %}     
+            </h1> 
+        </table>
+       <p>{{jj}}</p>
+    </div>
+<body>
+</html>
